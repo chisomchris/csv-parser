@@ -1,14 +1,16 @@
 const multer = require('multer')
 const path = require('path')
 const {isCSV} = require('./extValidator')
+
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, "uploads")
+        cb(null, "./uploads")
     },
     filename: function (req, file, cb) {
       cb(null, file.fieldname + "-" + Date.now() +".csv")
     }
   })
+
 const maxSize = 1 * 1000 * 1000;
     
 module.exports = multer({ 
@@ -23,4 +25,4 @@ const extname = isCSV(file.originalname.toLowerCase())
   }
 cb("File upload only supports CSV filetype" );
       } 
-}).single('csv');  
+}).single('csv'); 
