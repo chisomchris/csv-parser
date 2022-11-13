@@ -3,11 +3,8 @@ const path = require('path')
 const csv = require('csv-parser')
 
 module.exports = function (filePath) {
-    if (path.extname(filePath) !== '.csv') {
-        return new Error('unsupported file format')
-    }
-    const jsonData = []
-    return new Promise(function (resolve, reject) {
+   const jsonData = []
+   return new Promise(function (resolve, reject) {
         fs.createReadStream(filePath)
             .pipe(csv())
             .on('error', () => {
