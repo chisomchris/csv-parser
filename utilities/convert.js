@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const csv = require('csv-parser')
+const validator = require('./validators')
 
 module.exports = function (filePath) {
    const jsonData = []
@@ -11,11 +12,16 @@ module.exports = function (filePath) {
                 reject('error reading file')
             })
             .on('data', (row) => {
-                // validation here before adding to array
-                jsonData.push(row)
-            })
-            .on('end', () => {
-                resolve(jsonData)
-            })
+  if (!validator.data(row)) {
+    jsonData.push({
+      message : "invalid entries"
+    })
+     } else{
+    jsonData.push(row)
+     }
+  })
+ .on('end', () => {
+    resolve(jsonData)
+ })
     })
 } 

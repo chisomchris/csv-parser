@@ -22,6 +22,11 @@ validator.mimetype(files.csv.mimetype))) {
     
 convertCSV(filePath)
     .then(data => {
+      if (!validator.headers(data[0])) {
+        return res.status(400).json({
+message : "invalid headers, accepted headers are : name, organization, award, description, date, certificate_number"
+        })
+      }
      res.status(200).json(data) 
   })
   .catch(error => {
