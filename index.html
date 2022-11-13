@@ -5,13 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSV converter Documentation</title>
-    <link rel="stylesheet" href="app.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body {
+  background-color: antiquewhite;
+}
+h1 {
+  text-align: center;
+}
+.Container1 {
+  font-family: "Roboto Slab", serif;
+  text-align: center;
+}
+ol {
+  list-style: none;
+}
+.upload {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.upload-box {
+  font-size: 16px;
+  background: white;
+  border-radius: 50px;
+  box-shadow: 5px 5px 10px black;
+  width: 350px;
+  outline: none;
+}
+
+::-webkit-file-upload-button {
+  color: white;
+  background: teal;
+  padding: 20px;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 1px 0 1px #6b4559;
+  outline: none;
+}
+
+::-webkit-file-upload-button:hover {
+  background-color: aquamarine;
+}
+
+    </style>
   </head>
   <body>
+<div class="Container1"><h1>CERTIFICATE GENERATOR</h1>
+<p>We help you generate certificates.</p>
+
+<ol>
+    <li>Click the Upload button</li>
+    <li>Upload a csv file. N.B It has to be a csv file</li>
+    <li>Click on upload</li>
+</ol>
+<h3>Your file must include: Name, Organization, Award name, Description, Date, and Certificate Number</h3>
+</div>
+
     <div class="upload">
-      <button type="button" class="btn-warning">
-        <i class="fa fa-upload"></i> Upload File
-        <input type="file" />
+        <input type="file" class="upload-box" />
       </button>
     </div>
   </body>
