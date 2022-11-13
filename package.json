@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/chisomchris/csv-parser/issues"
   },
-  "homepage": "https://github.com/chisomchris/csv-parser#readme"
+  "homepage": "https://github.com/chisomchris/csv-parser#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }

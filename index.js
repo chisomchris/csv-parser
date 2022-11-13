@@ -1,4 +1,5 @@
 const express = require('express');
+const {v4 : uuid } = require('uuid')
 const fs = require('fs')
 const csvRoute = require('./router')
 const cors = require('cors')
@@ -22,7 +23,7 @@ app.post('/api/upload', (req, res, next) => {
     form.parse(req, function (err, fields, files) {
 console.log(files.csv.filepath)
         var oldPath = files.csv.filepath;
-        var newPath = path.join(__dirname, 'uploads1') + '/' + files.csv.filename + '.csv'
+        var newPath = path.join(__dirname, 'uploads1') + '/' + uuid() + '.csv'
         var rawData = fs.readFileSync(oldPath)
 
         fs.writeFile(newPath, rawData, function (err) {
