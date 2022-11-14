@@ -4,70 +4,89 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap"
+      rel="stylesheet"
+    />
     <title>CSV converter Documentation</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
     <style>
-        body {
-  background-color: antiquewhite;
-}
-h1 {
-  text-align: center;
-}
-.Container1 {
-  font-family: "Roboto Slab", serif;
-  text-align: center;
-}
-ol {
-  list-style: none;
-}
-.upload {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-}
-
-.upload-box {
-  font-size: 16px;
-  background: white;
-  border-radius: 50px;
-  box-shadow: 5px 5px 10px black;
-  width: 350px;
-  outline: none;
-}
-
-::-webkit-file-upload-button {
-  color: white;
-  background: teal;
-  padding: 20px;
-  border: none;
-  border-radius: 50px;
-  box-shadow: 1px 0 1px #6b4559;
-  outline: none;
-}
-
-::-webkit-file-upload-button:hover {
-  background-color: aquamarine;
-}
-
+      body {
+        font-family: "Roboto Slab", serif;
+      }
+      h1 {
+        text-align: center;
+      }
+      h2 {
+        margin-left: 300px;
+      }
+      p {
+        margin-left: 200px;
+      }
+      ol {
+        margin-left: 200px;
+        list-style: none;
+      }
+      hr {
+        margin: 0 150px;
+      }
     </style>
   </head>
   <body>
-<div class="Container1"><h1>CERTIFICATE GENERATOR</h1>
-<p>We help you generate certificates.</p>
-
-<ol>
-    <li>Click the Upload button</li>
-    <li>Upload a csv file. N.B It has to be a csv file</li>
-    <li>Click on upload</li>
-</ol>
-<h3>Your file must include: Name, Organization, Award name, Description, Date, and Certificate Number</h3>
-</div>
-
-    <div class="upload">
-        <input type="file" class="upload-box" />
-      </button>
+    <div class="header">
+      <h1>CSV PARSER DOCUMENTATION</h1>
+    </div>
+    <hr />
+    <div class="box1">
+      <h2>DESCRIPTION</h2>
+      <hr />
+      <p>
+        this app service is used to parse and convert CSV file to JSON array.
+      </p>
+    </div>
+    <div class="box3">
+      <h2>USAGE</h2>
+      <hr />
+      <ol>
+        <li>/api/v1/upload</li>
+        <li>methods - post</li>
+        <li>payload - csv file</li>
+        <li>enctype - multipart/form-data</li>
+        <li>mimetype - text/csv or text/comma-separated-values</li>
+        <li>fieldname - csv</li>
+      </ol>
+    </div>
+    <div class="box3">
+      <h2>USAGE</h2>
+      <hr />
+      <p>
+        send a post request to /api/v1/upload, the fieldname of the uploaded
+        file must be csv and the column headers must be name, organization,
+        award, date, description, certificate_number
+      </p>
+    </div>
+    <div class="box4">
+      <h2>EXAMPLE USAGE</h2>
+      <hr />
+      <p>
+        visit /api/v1/upload/test, upload a csv file with the following heading:
+      </p>
+      <ol>
+        <li>name</li>
+        <li>organization</li>
+        <li>description</li>
+        <li>award</li>
+        <li>date</li>
+        <li>certificate_number</li>
+      </ol>
+      <p>view returned JSON array</p>
+    </div>
+    <div class="box5">
+      <h2>BUG FIXES</h2>
+      <hr />
+      <p>
+        report any bugs or issues
+        <a href="http://github.com/chisomchris/csv-parser/issues">here</a>
+      </p>
     </div>
   </body>
 </html>
