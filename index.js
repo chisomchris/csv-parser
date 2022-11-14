@@ -15,7 +15,7 @@ app.use(express.urlencoded({
 }));
 
 // upload CSV route handler
-app.use('/api/v1/upload', csvRoute)
+app.use('/api/upload', csvRoute)
 
 // api documentation page
 app.get('/', (req, res) => {
