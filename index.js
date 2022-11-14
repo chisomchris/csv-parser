@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 app.use(( req, res, next) => {
   const url = req.url
   res.status(404).json({
-error : "no resource available here" + ' - ' + url
+error : "not available here" + ' - ' + url
 })
 })
 
