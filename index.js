@@ -1,5 +1,4 @@
 const express = require('express');
-const {v4 : uuid } = require('uuid')
 const fs = require('fs')
 const csvRoute = require('./router')
 const cors = require('cors')
@@ -15,8 +14,8 @@ app.use(express.urlencoded({
     extended: true
 }));
 
-// 
-app.use('/api/v1/upload', csvRoute)
+// upload CSV route handler
+app.use('/api/upload', csvRoute)
 
 // api documentation page
 app.get('/', (req, res) => {
@@ -26,6 +25,20 @@ app.get('/', (req, res) => {
         }
         res.status(200).send(data)
     })
+})
+
+// generic route handler
+app.use(( req, res, next) => {
+  const url = req.url
+  res.status(404).json({
+error : "not available here" + ' - ' + url
+})
+})
+
+// catch all handler middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack)
+  res.status(500).send('Something broke!')
 })
 
 // listen on port 8000
