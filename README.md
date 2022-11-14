@@ -6,9 +6,8 @@ this app service is used to parse and convert CSV file to JSON array.
 
 ## endpoints
 
-1. **[/api/v1/upload]( https://talented-sock-jay.cyclic.app/api/v1/upload )**
+1. **[/api/upload]( https://talented-sock-jay.cyclic.app/api/upload )** - POST
 
-  -  methods - **post**
   -  payload - **csv file**
   -  enctype - **multipart/form-data**
   -  mimetype - **text/csv** or **text/comma-separated-values**
@@ -16,11 +15,11 @@ this app service is used to parse and convert CSV file to JSON array.
 
 ## usage
 
-send a post request to [/api/v1/upload]( https://talented-sock-jay.cyclic.app/api/v1/upload), the fieldname of the uploaded file must be csv and the column headers must be **name**, **organization**, **award**, **date**, **description**, **certificate_number**
+send a post request to [/api/upload]( https://talented-sock-jay.cyclic.app/api/upload), the fieldname of the uploaded file must be csv and the column headers must be **name**, **organization**, **award**, **date**, **description**, **certificate_number**
 
 ## example usage
 
-visit [/api/v1/upload/test]( https://talented-sock-jay.cyclic.app/api/v1/upload/test), upload a csv file with the following heading:
+visit [/api/upload/test]( https://talented-sock-jay.cyclic.app/api/upload/test), upload a csv file with the following heading:
 
    - name
    - organization
