@@ -15,18 +15,16 @@ this app service is used to parse and convert CSV file to JSON array.
 
 ## usage
 
-send a post request to [/api/upload]( https://talented-sock-jay.cyclic.app/api/upload), the fieldname of the uploaded file must be csv and the column headers must be **name**, **organization**, **award**, **date**, **description**, **certificate_number**
+send a post request to [/api/upload]( https://talented-sock-jay.cyclic.app/api/upload), the fieldname of the uploaded file must be csv and the column headers must be **first_name**, **last_name**, **student_id**, **other_name (OPTIONAL)**
 
 ## example usage
 
 visit [/api/upload/test]( https://talented-sock-jay.cyclic.app/api/upload/test), upload a csv file with the following heading:
 
-   - name
-   - organization
-   - description
-   - award
-   - date
-   - certificate_number
+   - first_name
+   - last_name
+   - other_name (OPTIONAL)
+   - student_id
 
 view returned JSON array
 
